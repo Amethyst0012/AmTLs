@@ -10,14 +10,19 @@ document.addEventListener('DOMContentLoaded', function() {
   function sortChapters(order) {
     const allLinks = Array.from(chaptersList.querySelectorAll('a')); // keep <a> wrappers intact
 
-    // Sort by title text
+    // Sort by date instead of title
     allLinks.sort((a, b) => {
-      const titleA = a.querySelector('.chapters-title').textContent.trim().toLowerCase();
-      const titleB = b.querySelector('.chapters-title').textContent.trim().toLowerCase();
+      const dateStringA = a.querySelector('.chapter-date').textContent.trim();
+      const dateStringB = b.querySelector('.chapter-date').textContent.trim();
+
+      // Convert date strings to Date objects for correct comparison
+      const dateA = new Date(dateStringA);
+      const dateB = new Date(dateStringB);
+
       if (order === 'new') {
-        return titleB.localeCompare(titleA); // Z → A
+        return dateB - dateA; // Sort descending (newest first)
       } else {
-        return titleA.localeCompare(titleB); // A → Z
+        return dateA - dateB; // Sort ascending (oldest first)
       }
     });
 
