@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Sort by date instead of title
     allLinks.sort((a, b) => {
-      const dateStringA = a.querySelector('.chapter-date').textContent.trim();
-      const dateStringB = b.querySelector('.chapter-date').textContent.trim();
+      const dateStringA = a.querySelector('.chapters-date').textContent.trim();
+      const dateStringB = b.querySelector('.chapters-date').textContent.trim();
 
       // Convert date strings to Date objects for correct comparison
       const dateA = new Date(dateStringA);
