@@ -33,7 +33,7 @@
       {% assign lhahs_posts = site.posts | where: 'tags', 'lhahs' | sort: 'date' | reverse %}
       {% for post in lhahs_posts limit: 9 %}
       <a href="{{ post.url | relative_url }}">
-        <div class="chapters-item" data-date="{{ post.date | date: '%Y%m%d' }}">
+        <div class="chapters-item" data-date="{{ post.date | date: '%Y%m%d%H%M%S' }}">
           <div class="chapters-info">
             <span class="chapters-title">{{ post.title }}</span>
           </div>
@@ -48,7 +48,7 @@
         <div class="hidden-chapters">
           {% for post in lhahs_posts offset: 9 %}
           <a href="{{ post.url | relative_url }}">
-            <div class="chapters-item" data-date="{{ post.date | date: '%Y%m%d' }}">
+            <div class="chapters-item" data-date="{{ post.date | date: '%Y%m%d%H%M%S' }}">
               <div class="chapters-info">
                 <span class="chapters-title">{{ post.title }}</span>
               </div>
