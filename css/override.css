@@ -54,6 +54,31 @@ hr {
   right: 0;
 }
 
+/* ---------------------------------
+   Mobile layout: swap prev/next order
+   --------------------------------- */
+@media (max-width: 600px) {
+  .post_navi {
+    flex-direction: column;
+  }
+
+  /* make links full width and stack */
+  .post_navi .post_navi-item {
+    width: 100%;
+    padding: 0.8em 1em;
+  }
+
+  /* reverse order: next first, prev below */
+  .post_navi .nav_next {
+    order: 1;
+    text-align: center;
+  }
+  .post_navi .nav_prev {
+    order: 2;
+    text-align: center;
+  }
+}
+
 /* =================================
    CHAPTER SELECTOR (DROPDOWN)
 ================================= */
